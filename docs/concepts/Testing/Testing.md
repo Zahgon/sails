@@ -157,7 +157,7 @@ describe('UserController.login', function() {
 
   describe('#login()', function() {
     it('should redirect to /my/page', function (done) {
-      supertest(sails.hooks.http.app)
+      supertest(sails.hooks.http.server)
       .post('/users/login')
       .send({ name: 'test', password: 'test' })
       .expect(302)
